@@ -2,20 +2,17 @@ package AD_2x02;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import AD_2x01.Departamento;
 
 public class AccesoEmpleado {
 	private static final String NOMBREFICHERO = "empleado.txt";
 	
 	public static void insertoEmpleado(Empleado empleado) throws IOException {
-		String linea;
 		BufferedWriter escritor = null;
 		try {
 			escritor = new BufferedWriter(new FileWriter(NOMBREFICHERO, true));//True es para que no sobreescriba lo que ya hay
@@ -43,4 +40,13 @@ public class AccesoEmpleado {
 				lector.close();
 		}
 			}
+	
+	public static void actualizarEmpleados(List<Empleado> emp) throws IOException {
+		  BufferedWriter escritor = new BufferedWriter(new FileWriter(NOMBREFICHERO));
+		  for(Empleado i : emp) {
+			  escritor.write(i.toStringWithSeparators());
+			  escritor.newLine();
+		  }
+		  escritor.close();
+	  }
 }

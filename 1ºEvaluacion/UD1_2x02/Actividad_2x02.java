@@ -3,9 +3,6 @@ package AD_2x02;
 import entrada.Teclado;
 import java.util.*;
 
-import AD_2x01.AccesoDepartamento;
-import AD_2x01.Departamento;
-
 import java.io.*;
 
 public class Actividad_2x02 {
@@ -33,7 +30,7 @@ public class Actividad_2x02 {
 				actualizoDepartamento();
 				break;
 			case 5:
-				
+				borroEmpleado();
 				break;
 			}
 			}catch(IOException e) {
@@ -66,7 +63,7 @@ public class Actividad_2x02 {
 			return;
 		}
 		for(Empleado emp : empleados) {
-			System.out.println("emp");
+			System.out.println(emp);
 		}
 	}
 	
@@ -110,6 +107,12 @@ public class Actividad_2x02 {
 				empleados.remove(i);
 				eliminado = true;
 				}
+			}
+			if(eliminado) {
+			AccesoEmpleado.actualizarEmpleados(empleados);
+			System.out.println("Empleado eliminado con exito");
+			}else {
+			System.err.println("No existe ningun empleado con ese nombre");
 			}
 		}
 

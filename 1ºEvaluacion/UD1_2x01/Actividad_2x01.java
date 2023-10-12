@@ -13,6 +13,7 @@ public class Actividad_2x01 {
 		while (menu) {
 			mostrarMenu();
 			int opcion = Teclado.leerEntero("Que opcion quieres");
+			try{
 			switch (opcion) {
 			case 0:
 				menu = false;
@@ -36,8 +37,11 @@ public class Actividad_2x01 {
 				borroDepartamento();
 				break;
 			default:
-				System.err.println("La opción de menú debe estar comprendida entre 0 y 6.");
+				System.err.println("La opción de menú debe estar comprendida entre 0 y 5.");
 				break;
+			}
+			}catch(IOException e){
+				System.err.println("Error con el fichero");
 			}
 		}
 
@@ -46,6 +50,10 @@ public class Actividad_2x01 {
 	static void mostrarMenu() {
 		System.out.println("################");
 		System.out.println("Pulsa 1 para insertar un departamento");
+		System.out.println("Pulsa 2 para consultar departamentos");
+		System.out.println("Pulsa 3 para leer departamentos por codigo");
+		System.out.println("Pulsa 4 para actualizar departamentos");
+		System.out.println("Pulsa 5 para borrar departamento");
 		System.out.println("################");
 	}
 

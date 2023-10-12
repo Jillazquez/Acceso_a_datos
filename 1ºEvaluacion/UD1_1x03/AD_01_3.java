@@ -42,11 +42,12 @@ public class AD_01_3 {
 	}
 
 	static void encuentraPalabra(File fichero) {
-		String palabra = Teclado.leerCadena("Que palabra quieres encontrar no puede tener espacios");
+
+		String palabra = Teclado.leerCadena("Que palabra quieres encontrar no puede tener espacios")
 		if (palabra.contains(" ")) {
 			System.err.println("No puede contener espacios");
-			return;
-		}
+			encuentraPalabra(fichero);
+		}else{
 
 		try {
 			BufferedReader lector = new BufferedReader(new FileReader(fichero));
@@ -56,6 +57,7 @@ public class AD_01_3 {
 				lineas++;
 				if(linea.contains(palabra)) {
 					System.out.println("La palabra "+ palabra +" esta contenida en el fichero en la linea "+lineas);
+					lector.close();
 					return;
 				}
 				lector.close();
@@ -64,6 +66,7 @@ public class AD_01_3 {
 			System.err.println("La palabra no esta contenida en el fichero");
 		} catch (IOException e) {
 			System.err.println("Error con el fichero");
+		}
 		}
 
 	}
@@ -99,9 +102,7 @@ public class AD_01_3 {
 				}
 				lineas++;
 				palabras++;
-				System.out.println("test");
 			}
-			// palabras++;
 			lector.close();
 			System.out.println("El archivo tiene " + lineas + " lineas");
 			System.out.println("Y " + palabras + " palabras");

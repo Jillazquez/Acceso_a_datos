@@ -9,8 +9,11 @@ import entrada.Teclado;
 
 public class Actividad_3x01 {
 	public static void main(String[] args) {
+		AccesoEscritor.verificarArchivo();
 		int opcion;
 		boolean menu = true;
+		while(menu) {
+		mostrarMenu();
 		opcion = Teclado.leerEntero("Dime la opcion");
 		try {
 			switch (opcion) {
@@ -27,24 +30,32 @@ public class Actividad_3x01 {
 				consultarEscritorCodigo();
 				break;
 			case 4:
-                actualizoEscritor();
+				actualizoEscritor();
 				break;
 			case 5:
-                eliminarEscritor();
+				eliminarEscritor();
 				break;
 			default:
 				System.err.println("La opción de menú debe estar comprendida entre 0 y 5.");
 
 			}
-		} catch (IOException e) {
+		} catch (FileNotFoundException fnfe) {
+			System.out.println("Error con el fichero");
+		}catch (IOException e) {
 			System.out.println("Error con el fichero");
 		}
+		}
+		
 	}
+
 
 	public static void mostrarMenu() {
 		System.out.println("Pulsa 0 para cerrar");
 		System.out.println("Pulsa 1 para insertar escritor");
 		System.out.println("Pulsa 2 consultar los escritores");
+		System.out.println("Pulsa 3 consultar los escritores por codigo");
+		System.out.println("Pulsa 4 consultar los escritores");
+		System.out.println("Pulsa 5 consultar los escritores");
 	}
 
 	public static void insertarEscritor() throws FileNotFoundException, IOException {
@@ -137,5 +148,5 @@ public class Actividad_3x01 {
 			System.err.println("No existe ningún escritor con ese código en el fichero binario.");
 		}
 	}
+	}
 
-}

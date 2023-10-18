@@ -1,5 +1,6 @@
 package AD_3x01;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -37,5 +38,17 @@ public class AccesoEscritor {
             e.printStackTrace();
         }
         return escritores;
+    }
+    
+    public static void verificarArchivo() {
+        File file = new File(NOMBRE_FICHERO);
+
+        if (!file.exists()) {
+            try {
+            	file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
     }

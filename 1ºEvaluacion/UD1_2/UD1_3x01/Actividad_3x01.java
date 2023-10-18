@@ -27,8 +27,10 @@ public class Actividad_3x01 {
 				consultarEscritorCodigo();
 				break;
 			case 4:
+                actualizoEscritor();
 				break;
 			case 5:
+                eliminarEscritor();
 				break;
 			default:
 				System.err.println("La opción de menú debe estar comprendida entre 0 y 5.");

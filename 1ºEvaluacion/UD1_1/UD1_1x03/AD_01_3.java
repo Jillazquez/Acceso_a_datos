@@ -43,7 +43,7 @@ public class AD_01_3 {
 
 	static void encuentraPalabra(File fichero) {
 
-		String palabra = Teclado.leerCadena("Que palabra quieres encontrar no puede tener espacios")
+		String palabra = Teclado.leerCadena("Que palabra quieres encontrar no puede tener espacios");
 		if (palabra.contains(" ")) {
 			System.err.println("No puede contener espacios");
 			encuentraPalabra(fichero);

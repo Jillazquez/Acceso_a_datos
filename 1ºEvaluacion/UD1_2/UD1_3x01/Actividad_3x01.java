@@ -1,5 +1,3 @@
-package AD_3x01;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;

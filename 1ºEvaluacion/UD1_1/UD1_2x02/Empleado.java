@@ -1,6 +1,8 @@
 package AD_2x02;
 
-public class Empleado {
+import java.io.Serializable;
+
+public class Empleado implements Serializable{
 	private int codigo;
 	private int codigoDepartamento;
 	private String nombre;

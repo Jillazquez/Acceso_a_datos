@@ -1,0 +1,6 @@
+1;Horizon Forbidden West;PlayStation 4;56,99
+2;The Legend of Zelda: Breath of the Wild;Nintendo Switch;59,99
+3;Mario Kart 8 Deluxe;Nintendo Switch;46,99
+4;Nintendo Switch Sports;Nintendo Switch;39,99
+5;The Last Of Us Parte II;PlayStation 4;30,99
+6;Need for Speed Heat;PlayStation 4;23,99
